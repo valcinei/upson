@@ -11,7 +11,7 @@ module.exports = {
   run: async (toolbox: GluegunToolbox) => {
     const {
       parameters,
-      print: { info, error, success },
+      print: {  error, success },
     } = toolbox
 
       try{
