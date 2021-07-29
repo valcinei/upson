@@ -1,4 +1,4 @@
 
 export interface IData{
-    model: string
+    model?: string
 }

@@ -1,6 +1,6 @@
 {
   "name": "upson",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "upson CLI",
   "private": false,
   "types": "build/types/types.d.ts",
@@ -34,6 +34,7 @@
     "dotenv": "^10.0.0",
     "gluegun": "latest",
     "knex": "^0.95.8",
+    "knex-scripts": "^0.3.3",
     "oracledb": "^5.2.0",
     "pg": "^8.7.1",
     "sqlite3": "^5.0.2"

@@ -1,13 +1,10 @@
-
-import * as fs from 'fs';
 import { GluegunToolbox } from 'gluegun';
-import { contextDatabase } from '../database/config';
 import { LoadDataService } from '../services/LoadDataService'
-
+import *  as path from 'path';
 
 module.exports = {
-  name: 'loaddata',
-  alias: ['ld'],
+  name: 'model-from-filename',
+  alias: ['mfn'],
   run: async (toolbox: GluegunToolbox) => {
     const {
       parameters,
@@ -15,12 +12,10 @@ module.exports = {
     } = toolbox
 
       try{
-        success("Starting");
-        const jsonData = JSON.parse(fs.readFileSync(parameters.first, 'utf8'));
         
-        const loaddataService = new LoadDataService(contextDatabase);
-
-        await loaddataService.insertData(jsonData);
+        const loaddataService = new LoadDataService();
+        const filePath = path.resolve(parameters.first)
+        await loaddataService.addModelByFileName(filePath);
 
         success(`Data Loaded`)
         process.exit(1);
