@@ -1,5 +1,9 @@
 # upson CLI
 
+##  Important:
+ To run in oracle db requires [install oracle client](http://oracle.github.io/node-oracledb/INSTALL.html#windowsinstallation) fallow steps in bellow link:
+ [http://oracle.github.io/node-oracledb/INSTALL.html#windowsinstallation](http://oracle.github.io/node-oracledb/INSTALL.html#windowsinstallation)
+
 # Command Reference for upson
 export env vars or create `.env` file in foder 
 example:
