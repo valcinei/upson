@@ -11,19 +11,22 @@ module.exports = {
   run: async (toolbox: GluegunToolbox) => {
     const {
       parameters,
-      print: { info, error },
+      print: { info, error, success },
     } = toolbox
 
       try{
-
+        success("Starting");
         const jsonData = JSON.parse(fs.readFileSync(parameters.first, 'utf8'));
         
         const loaddataService = new LoadDataService(contextDatabase);
+
         await loaddataService.insertData(jsonData);
 
-        info(`Data Loaded`)
+        success(`Data Loaded`)
+        process.exit(1);
       } catch(e){
         error(e)
+        process.exit(1);
 
       }
   },
